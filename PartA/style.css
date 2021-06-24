@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
 }
 
+h1 {
+    font-size: 50px;
+}
+
 button {
     border: none;
     border-radius: 4px;
@@ -210,42 +214,117 @@ button {
 
 }
 
+.page-banner {
+    background-image: url(images/hero-home.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+}
+
+.page-banner .page-overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 40px;
+    color: white;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.page-banner .page-overlay h1 {
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .page-banner {
+        height: 30vh;
+    }
+
+    .page-banner .page-overlay {
+        right: 10%;
+        padding: 20px;
+    }
+
+    .page-banner button {
+        width: 100%;
+    }
+
+}
+
 /* Content Section */
 
-.content-section {
+body.home .content-section {
     grid-template-columns: 50% 50%;
     column-gap: 5px;
     display: grid;
 }
 
+body.page .content-section {
+    width: 80%;
+    margin: auto;
+    padding: 40px;
+}
+
+body.page .content-section-text img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, 0.2);
+}
+
+body.page .content-section .author-byline {
+    color: rgb(150, 150, 150);
+}
+
 @media screen and (max-width: 600px) {
-    .content-section {
+    body.page .content-section {
+        width: 100%;
+        padding: 0;
+    }
+
+    body.page .content-section .content-section-text p,
+    body.page .content-section .author-byline,
+    body.page .content-section h1 {
+        margin: 20px;
+    }
+
+    body.page .content-section-text img {
+        border-radius: 0;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body.home .content-section {
         grid-template-columns: 100%;
         column-gap: 0;
     }
 }
 
-.content-section .content-right {
+body.home .content-section .content-right {
     margin-top: 40px;
     width: 80%;
 }
 
 @media screen and (max-width: 600px) {
-    .content-section .content-right {
+    body.home .content-section .content-right {
         margin-top: 0;
         padding: 10px 40px 40px 40px;
         width: auto;
     }
 }
 
-
-.content-section .content-left {
+body.home .content-section .content-left {
     position: relative;
     display: flex;
     margin-top: 40px;
 }
 
-.content-section .content-left img {
+body.home .content-section .content-left img {
     width: 80%;
     height: fit-content;
     border-radius: 0 20px 20px 0;
@@ -253,7 +332,7 @@ button {
 }
 
 @media screen and (max-width: 600px) {
-    .content-section .content-left img {
+    body.home .content-section .content-left img {
         width: 100%;
         border-radius: 0;
         box-shadow: none;
